@@ -1,0 +1,32 @@
+{
+  "name": "wasm-anynum",
+  "version": "0.0.1",
+  "description": "wasm-anynum",
+  "main": "src/index.js",
+  "scripts": {
+    "build:debug": "npx asc assembly/index.ts -b build/debug/sha256.wasm -t build/debug/sha256.wat --sourceMap --validate --debug",
+    "build:release": "npx asc assembly/index.ts -b build/release/sha256.wasm -t build/release/sha256.wat -O3 --sourceMap --validate",
+    "build:wasm": "npm run  build:debug && npm run build:release",
+    "test": "asp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/webees/wasm-anynum.git"
+  },
+  "keywords": [
+    "sha256"
+  ],
+  "author": "abckey",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/webees/wasm-anynum/issues"
+  },
+  "homepage": "https://github.com/webees/wasm-anynum#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^12.0.0",
+    "as-pect": "jtenner/as-pect",
+    "assemblyscript": "AssemblyScript/assemblyscript",
+    "typescript": "^3.4.5"
+  }
+}
